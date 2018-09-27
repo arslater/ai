@@ -33,7 +33,18 @@ def dfs_stack(graph, start, goal,visited):
             stack=graph[n]+stack
     return visited
 
-graph=test.test
+def bfs_stack(graph,start,visited):
+    stack=[start]
+    while stack:
+        n=stack.pop(0)
+        if n not in visited:
+            visited.append(n)
+            stack.extend(graph[n])
+    return visited
 
-print(dfs_recursive(graph,'S','G',[]))
-print(dfs_stack(graph,'S','G',[]))
+graph=test.test1
+
+print(dfs_recursive(graph,'A','G',[]))
+print(dfs_stack(graph,'A','G',[]))
+print(bfs_stack(graph,'A',[]))
+
