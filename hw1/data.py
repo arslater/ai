@@ -43,8 +43,9 @@ class Data:
                    'A': ['C','S'],
                    'C': ['A','D','G'],
                    'G': ['C','D'],
-                   'D': ['B','G','S'],
+                   'D': ['B','C','G','S'],
                    'B': ['D','S']}
+        self.test1={'A':['B','C'],'B':['D','E'],'C':['D','E'],'D':['E'],'E':['A']}
     """ Adjacency Matrices
 
     G1:
