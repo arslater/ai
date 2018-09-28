@@ -44,17 +44,25 @@ def bfs_stack(graph,start,visited):
 def ucs_vertex():
     print("https://stackoverflow.com/questions/43354715/uniform-cost-search-in-python")
 
-def vert_2_matrix_2(graph,start):
+def vert_2_matrix_2(graph):
+    entries=[]
     row=[]
+    columns=[]
     for node in graph:
-        row.append(node)
+        entries.append(node)
     for node in graph:
-        for entry in row:
+        for entry in entries:
             if entry in graph[node]:
-                print("1",end=" ")
+                #print("1",end=" ")
+                row.append("1")
             else:
-                print("0",end=" ")
-        print()
+                #print("0",end=" ")
+                row.append("0")
+        columns.append(row)
+        #print(row)
+        row=[]
+        #print()
+    return columns
 graph=test.test
 
 print(dfs_recursive(graph,'S','G',[]))
