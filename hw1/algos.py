@@ -65,11 +65,9 @@ def ucs_vertex(graph, root, goal):
     pq.put((weight,root))
 
     while not pq.empty():
-       # print("**: ", pq)
         dq_item=pq.get()
         cur_node=dq_item[1]
         cur_node_weight=dq_item[0]
-        #print(cur_node_weight)
 
         if cur_node == goal:
             path = [cur_node]
@@ -81,7 +79,7 @@ def ucs_vertex(graph, root, goal):
                 prev_node = parent
 
             path.reverse()
-            return path
+            return (visited,path)
         else:
             for edge,key in graph[cur_node].items():
                 child = edge
@@ -115,5 +113,7 @@ graph=test.g3_vertex
 #print(dfs_recursive(graph,'S','G',[]))
 #print(dfs_stack(graph,'S','G',[]))
 #print(bfs_stack(graph,'S',[]))
-print(ucs_vertex(graph,'S','G'))
+ufs_search=ucs_vertex(graph,'S','G')
+print("States Expanded:",ufs_search[0])
+print("Path Returned:", ufs_search[1])
 
