@@ -6,33 +6,24 @@
 	by Anita Slater
 
 """
-import queue as Q
 from data import Data
-
-test=Data()
+import queue as Q
 
 def dfs_recursive(graph, node, goal, visited):
-    #print("@",node,"@", end="")
     visited.append(node)
     if node == goal:
-        print("BOOM")
         return visited
     for n in graph[node]:
-        #print(graph[node],"->{",n,"}")
         if n not in visited:
-            #print("{{",n,"}}->",end="")
             dfs_recursive(graph,n,goal,visited)
     return visited
 
 def dfs_recursive_matrix(graph, node, goal, visited):
-    #print("@",node,"@", end="")
     visited.append(node)
     if node == goal:
         return visited
     for n in graph[node]:
-        #print(graph[node],"->{",n,"}")
         if n not in visited:
-            #print("{{",n,"}}->",end="")
             dfs_recursive(graph,n,goal,visited)
     return visited
 
@@ -98,22 +89,9 @@ def vert_2_matrix_2(graph):
     for node in graph:
         for entry in entries:
             if entry in graph[node]:
-                #print("1",end=" ")
                 row.append("1")
             else:
-                #print("0",end=" ")
                 row.append("0")
         columns.append(row)
-        #print(row)
         row=[]
-        #print()
     return columns
-graph=test.g3_vertex
-
-#print(dfs_recursive(graph,'S','G',[]))
-#print(dfs_stack(graph,'S','G',[]))
-#print(bfs_stack(graph,'S',[]))
-ufs_search=ucs_vertex(graph,'S','G')
-print("States Expanded:",ufs_search[0])
-print("Path Returned:", ufs_search[1])
-

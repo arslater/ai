@@ -2,11 +2,10 @@
 	CSI 435: Intro to AI/Machine Learning
 	HW 1
 
-	Graphs.py: Class containing references of each of the graph types
+	Data.py: Class containing references of each of the graph types
 	by Anita Slater
 
 """
-import numpy as np
 
 
 class Data:
@@ -32,11 +31,14 @@ class Data:
         self.g2_vertex={'S': ['d', 'e', 'p'],
                  'd': ['b', 'c'],
                  'b': ['a'],
+                 'a': [ ],
                  'c': ['a'],
                  'e': ['h', 'r'],
                  'h': ['q', 'p'],
                  'p': ['q'],
+                 'q': [ ],
                  'r': ['f'],
+                 'G': [ ],
                  'f': ['c', 'G']}
 
         self.g3_vertex = {'S': {'d':3, 'e':9, 'p':1},
@@ -54,11 +56,14 @@ class Data:
 
         self.g4_vertex={'S':{'d':3, 'e':9, 'p':1},
                  'd': {'b':1, 'c':8},
+                 'a': { },
                  'b': {'a':2},
                  'c': {'a':2},
                  'e': {'h':8, 'r':2},
                  'h': {'q':4, 'p':4},
                  'p': {'q':15},
+                 'q': { },
+                 'G': { },
                  'r': {'f':2},
                  'f': {'c':3, 'G':2}}
 
