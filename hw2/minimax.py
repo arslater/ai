@@ -4,7 +4,6 @@
 ## minimax.py: Contains the code for the Minimax Algorithm
 ## by Anita Slater
 ##########################
-from binTree import *
 import math
 
 def minimax(curDepth,index,maxTurn,values,targetDepth,visited):
@@ -66,7 +65,3 @@ def minimaxab(values,index,maxTurn,targetDepth,curDepth,visited,alpha,beta):
             if (beta <= alpha):
                 break
         return best
-
-values=[3, 10, 2, 9, 10, 7, 5, 9, 2, 5, 6, 4, 2, 7, 9, 1]
-targetDepth=math.log(len(values),2)
-print(minimaxab(values,0,True,targetDepth,0,[],10000,-10000))
